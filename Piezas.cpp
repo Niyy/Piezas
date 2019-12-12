@@ -105,8 +105,8 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    if(0 <= row && row < board.size() &&
-    0 <= column && column < board[row].size())
+    if(0 <= row && row < 3 &&
+    0 <= column && column < 4)
     {
         return board[row][column];
     }
