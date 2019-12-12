@@ -99,7 +99,7 @@ TEST(PiezasTest, checkOutOfBoundsRow)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.pieceAt(-1, 0), X);
+	ASSERT_EQ(new_game.pieceAt(-1, 0), Invalid);
 }
 
 
@@ -109,7 +109,7 @@ TEST(PiezasTest, checkOutOfBoundsColumn)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.pieceAt(0, -1), X);
+	ASSERT_EQ(new_game.pieceAt(0, -1), Invalid);
 }
 
 
@@ -119,5 +119,5 @@ TEST(PiezasTest, checkOutOfBoundsBoth)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.pieceAt(-1, -1), X);
+	ASSERT_EQ(new_game.pieceAt(-1, -1), Invalid);
 }
