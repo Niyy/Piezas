@@ -67,7 +67,7 @@ Piece Piezas::dropPiece(int column)
 
     if(0 <= column && (unsigned)column < board[0].size())
     {
-        if(pieceAt(0, column) == Blank)
+        if(pieceAt(0, column) != Blank)
         {
             for(unsigned y = 0; y < board.size(); y++)
             {
