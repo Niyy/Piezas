@@ -25,7 +25,7 @@ TEST(PiezasTest, sanityCheck)
 
 TEST(PiezasTest, checkEmpty)
 {
-	Piezas new_game;
+	Piezas new_game = new Piezas;
 
 	ASSERT_EQ(new_game.pieceAt(0, 0), Blank);
 }
