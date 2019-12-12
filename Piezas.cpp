@@ -71,9 +71,9 @@ Piece Piezas::dropPiece(int column)
         {
             for(unsigned y = 0; y < board.size(); y++)
             {
-                if(y = Blank && y + 1 < board.size())
+                if(y + 1 < board.size())
                 {
-                    if(pieceAt(y-1, column) != Blank)
+                    if(pieceAt(y+1, column) != Blank)
                     {
                         to_return = board[y][column] = turn;
                         if(turn == X)
