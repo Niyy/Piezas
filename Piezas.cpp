@@ -22,6 +22,18 @@
 **/
 Piezas::Piezas()
 {
+    for(int y = 0; y < board.size; y++)
+    {
+        std:;vector<Piece> next_row;
+        for(int x = 0; x < board[y].size; x++)
+        {
+            next_row.push_back(Piece.Blank);
+        }
+
+        board.push_back(next_row);
+    }
+
+    turn = Piece.X;
 }
 
 /**
@@ -30,6 +42,15 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+    for(int y = 0; y < board.size; y++)
+    {
+        for(int x = 0; x < board[y].size; x++)
+        {
+            board[y][x] = Piece.Blank;
+        }
+    }
+
+    turn = Piece.X
 }
 
 /**
@@ -42,7 +63,40 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-    return Blank;
+    Piece to_return = Piece.Invalid;
+
+    if(0 < row && column < board[row].size)
+    {
+        if(pieceAt(0, column) == Piece.Blank)
+        {
+            for(int y = 0; y < board.size; y++)
+            {
+                if(y = Piece.Blank && y + 1 < board.size)
+                {
+                    if(pieceAt(y-1, x) != Piece.Blank)
+                    {
+                        to_return = board[y][column] = turn;
+                        if(turn == Piece.X)
+                        {
+                            turn = Piece.O;
+                        }
+                        else
+                        {
+                            turn = Piece.X;
+                        }
+
+                        return to_return;
+                    }
+                }
+            }
+        }
+        else
+        {
+            return Piece.Blank;
+        }
+    }
+
+    return to_return;
 }
 
 /**
@@ -51,7 +105,13 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    return Blank;
+    if(0 < row && row < board.size &&
+    0 < row && column < board[row].size)
+    {
+        return board[row][column];
+    }
+
+    return Invalid;
 }
 
 /**
@@ -65,5 +125,81 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+    Piece current_piece;
+    int vertical_count = 0;
+    int horizontal_count = 0;
+    int x_max = 0;
+    int o_max = 0;
+
+    for(int y = 0; y < board.size; y++)
+    {
+        for(int x = 0; x < board[y].size; x++)
+        {
+            if(pieceAt(y, x) == current_piece)
+            {
+
+            }
+            else
+            {
+                if(pieceAt(y, x) == Piece.X)
+                {
+                    if(vertical_count > x_max)
+                    {
+                        if(vertical_count > horizontal_count)
+                        {
+                            x_max = vertical_count;
+                        }
+                        else
+                        {
+                            x_max = horizontal_count;
+                        }
+                    }
+                    else if(horizontal_count > x_max)
+                    {
+                        x_max = horizontal_count;
+                    }
+
+                    current_piece = Piece.O;
+                }
+                else if(pieceAt(y, x) == Piece.O)
+                {
+                    if(vertical_count > o_max)
+                    {
+                        if(vertical_count > horizontal_count)
+                        {
+                            o_max = vertical_count;
+                        }
+                        else
+                        {
+                            o_max = horizontal_count;
+                        }
+                    }
+                    else if(horizontal_count > o_max)
+                    {
+                        o_max = horizontal_count;
+                    }
+
+                    current_piece = Piece.X;
+                }
+                else
+                {
+                    return Piece.Blank;
+                }
+
+                vertical_count = 0;
+                horizontal_count = 0;
+            }
+        }
+    }
+
+    if(x_max > o_max)
+    {
+        return Piece.X;
+    }
+    else
+    {
+        return Piece.O
+    }
+
+    return Invalid;
 }
