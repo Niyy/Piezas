@@ -58,9 +58,9 @@ TEST(PiezasTest, checkFullColumn)
 {
 	Piezas new_game;
 
-	new_game.dropPiece(0)
-	new_game.dropPiece(0)
-	new_game.dropPiece(0)
+	new_game.dropPiece(0);
+	new_game.dropPiece(0);
+	new_game.dropPiece(0);
 
 	ASSERT_EQ(new_game.dropPiece(0), Blank);
 }
@@ -72,7 +72,7 @@ TEST(PiezasTest, checkPiecePlaced)
 {
 	Piezas new_game;
 
-	new_game.dropPiece(0)
+	new_game.dropPiece(0);
 
 	ASSERT_EQ(new_game.pieceAt(2, 0), X);
 }
@@ -84,8 +84,8 @@ TEST(PiezasTest, checkPieceplaceSecond)
 {
 	Piezas new_game;
 
-	new_game.dropPiece(0)
-	new_game.dropPiece(0)
+	new_game.dropPiece(0);
+	new_game.dropPiece(0);
 
 	ASSERT_EQ(new_game.pieceAt(2, 0), X);
 }
