@@ -22,18 +22,18 @@
 **/
 Piezas::Piezas()
 {
-    for(int y = 0; y < board.size; y++)
+    for(int y = 0; y < board.size(); y++)
     {
-        std:;vector<Piece> next_row;
-        for(int x = 0; x < board[y].size; x++)
+        std::vector<Piece> next_row;
+        for(int x = 0; x < board[y].size(); x++)
         {
-            next_row.push_back(Piece.Blank);
+            next_row.push_back(Blank);
         }
 
         board.push_back(next_row);
     }
 
-    turn = Piece.X;
+    turn = X;
 }
 
 /**
@@ -42,15 +42,15 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
-    for(int y = 0; y < board.size; y++)
+    for(int y = 0; y < board.size(); y++)
     {
-        for(int x = 0; x < board[y].size; x++)
+        for(int x = 0; x < board[y].size(); x++)
         {
-            board[y][x] = Piece.Blank;
+            board[y][x] = Blank;
         }
     }
 
-    turn = Piece.X
+    turn = X;
 }
 
 /**
@@ -63,26 +63,26 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-    Piece to_return = Piece.Invalid;
+    Piece to_return = Invalid;
 
-    if(0 < row && column < board[row].size)
+    if(0 < column && column < board[0].size())
     {
-        if(pieceAt(0, column) == Piece.Blank)
+        if(pieceAt(0, column) == Blank)
         {
-            for(int y = 0; y < board.size; y++)
+            for(int y = 0; y < board.size(); y++)
             {
-                if(y = Piece.Blank && y + 1 < board.size)
+                if(y = Blank && y + 1 < board.size())
                 {
-                    if(pieceAt(y-1, x) != Piece.Blank)
+                    if(pieceAt(y-1, column) != Blank)
                     {
                         to_return = board[y][column] = turn;
-                        if(turn == Piece.X)
+                        if(turn == X)
                         {
-                            turn = Piece.O;
+                            turn = O;
                         }
                         else
                         {
-                            turn = Piece.X;
+                            turn = X;
                         }
 
                         return to_return;
@@ -92,7 +92,7 @@ Piece Piezas::dropPiece(int column)
         }
         else
         {
-            return Piece.Blank;
+            return Blank;
         }
     }
 
@@ -105,8 +105,8 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    if(0 < row && row < board.size &&
-    0 < row && column < board[row].size)
+    if(0 < row && row < board.size() &&
+    0 < row && column < board[row].size())
     {
         return board[row][column];
     }
@@ -131,9 +131,9 @@ Piece Piezas::gameState()
     int x_max = 0;
     int o_max = 0;
 
-    for(int y = 0; y < board.size; y++)
+    for(int y = 0; y < board.size(); y++)
     {
-        for(int x = 0; x < board[y].size; x++)
+        for(int x = 0; x < board[y].size(); x++)
         {
             if(pieceAt(y, x) == current_piece)
             {
@@ -141,7 +141,7 @@ Piece Piezas::gameState()
             }
             else
             {
-                if(pieceAt(y, x) == Piece.X)
+                if(pieceAt(y, x) == X)
                 {
                     if(vertical_count > x_max)
                     {
@@ -159,9 +159,9 @@ Piece Piezas::gameState()
                         x_max = horizontal_count;
                     }
 
-                    current_piece = Piece.O;
+                    current_piece = O;
                 }
-                else if(pieceAt(y, x) == Piece.O)
+                else if(pieceAt(y, x) == O)
                 {
                     if(vertical_count > o_max)
                     {
@@ -179,11 +179,11 @@ Piece Piezas::gameState()
                         o_max = horizontal_count;
                     }
 
-                    current_piece = Piece.X;
+                    current_piece =X;
                 }
                 else
                 {
-                    return Piece.Blank;
+                    return Blank;
                 }
 
                 vertical_count = 0;
@@ -194,11 +194,11 @@ Piece Piezas::gameState()
 
     if(x_max > o_max)
     {
-        return Piece.X;
+        return X;
     }
     else
     {
-        return Piece.O
+        return O;
     }
 
     return Invalid;
