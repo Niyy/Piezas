@@ -22,10 +22,10 @@
 **/
 Piezas::Piezas()
 {
-    for(int y = 0; y < board.size(); y++)
+    for(int y = 0; y < 3; y++)
     {
         std::vector<Piece> next_row;
-        for(int x = 0; x < board[y].size(); x++)
+        for(int x = 0; x < 4; x++)
         {
             next_row.push_back(Blank);
         }
@@ -105,8 +105,8 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    if(0 < row && row < board.size() &&
-    0 < row && column < board[row].size())
+    if(0 <= row && row < board.size() &&
+    0 <= column && column < board[row].size())
     {
         return board[row][column];
     }
