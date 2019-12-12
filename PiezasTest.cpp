@@ -37,7 +37,9 @@ TEST(PiezasTest, placeFirstPiece)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.dropPiece(0), X);
+	Piece result = new_game.dropPiece(0);
+
+	ASSERT_EQ(result, X);
 }
 
 
