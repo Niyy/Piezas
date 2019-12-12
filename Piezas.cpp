@@ -25,7 +25,7 @@ Piezas::Piezas()
     for(int y = 0; y < 3; y++)
     {
         std::vector<Piece> next_row;
-        for(int x = 0; x < 4; x++)
+        for(unsigned x = 0; x < 4; x++)
         {
             next_row.push_back(Blank);
         }
@@ -42,9 +42,9 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
-    for(int y = 0; y < board.size(); y++)
+    for(unsigned y = 0; y < board.size(); y++)
     {
-        for(int x = 0; x < board[y].size(); x++)
+        for(unsigned x = 0; x < board[y].size(); x++)
         {
             board[y][x] = Blank;
         }
@@ -69,7 +69,7 @@ Piece Piezas::dropPiece(int column)
     {
         if(pieceAt(0, column) == Blank)
         {
-            for(int y = 0; y < board.size(); y++)
+            for(unsigned y = 0; y < board.size(); y++)
             {
                 if(y = Blank && y + 1 < board.size())
                 {
@@ -131,9 +131,9 @@ Piece Piezas::gameState()
     int x_max = 0;
     int o_max = 0;
 
-    for(int y = 0; y < board.size(); y++)
+    for(unsigned y = 0; y < board.size(); y++)
     {
-        for(int x = 0; x < board[y].size(); x++)
+        for(unsigned x = 0; x < board[y].size(); x++)
         {
             if(pieceAt(y, x) == current_piece)
             {
