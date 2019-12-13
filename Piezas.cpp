@@ -152,28 +152,13 @@ Piece Piezas::gameState()
         {
             if(pieceAt(y, x) == current_piece)
             {
-                if(x == 0)
-                {
-                    vertical_count++;
-                }
                 horizontal_count++;
             }
             else
             {
                 if(pieceAt(y, x) == X)
                 {
-                    if(vertical_count > x_max)
-                    {
-                        if(vertical_count > horizontal_count)
-                        {
-                            x_max = vertical_count;
-                        }
-                        else
-                        {
-                            x_max = horizontal_count;
-                        }
-                    }
-                    else if(horizontal_count > x_max)
+                    if(horizontal_count > x_max)
                     {
                         x_max = horizontal_count;
                     }
@@ -182,18 +167,7 @@ Piece Piezas::gameState()
                 }
                 else if(pieceAt(y, x) == O)
                 {
-                    if(vertical_count > o_max)
-                    {
-                        if(vertical_count > horizontal_count)
-                        {
-                            o_max = vertical_count;
-                        }
-                        else
-                        {
-                            o_max = horizontal_count;
-                        }
-                    }
-                    else if(horizontal_count > o_max)
+                    if(horizontal_count > o_max)
                     {
                         o_max = horizontal_count;
                     }
@@ -205,11 +179,50 @@ Piece Piezas::gameState()
                     return Invalid;
                 }
 
-                vertical_count = 0;
-                horizontal_count = 0;
+                horizontal_count = 1;
             }
         }
     }
+
+
+    for(unsigned x = 0; x < board.size(); x++)
+    {
+        for(unsigned y = 0; y < board.size(); y++)
+        {
+            if(pieceAt(y, x) == current_piece)
+            {
+                vertical_count++;
+            }
+            else
+            {
+                if(pieceAt(y, x) == X)
+                {
+                    if(vertical_count > x_max)
+                    {
+                        x_max = vertical_count;
+                    }
+
+                    current_piece = O;
+                }
+                else if(pieceAt(y, x) == O)
+                {
+                    if(vertical_count > o_max)
+                    {
+                        o_max = vertical_count;
+                    }
+
+                    current_piece = X;
+                }
+                else
+                {
+                    return Invalid;
+                }
+
+                vertical_count = 1;
+            }
+        }
+    }
+
 
     if(x_max > o_max)
     {
