@@ -198,7 +198,7 @@ Piece Piezas::gameState()
                         o_max = horizontal_count;
                     }
 
-                    current_piece =X;
+                    current_piece = X;
                 }
                 else
                 {
@@ -215,7 +215,7 @@ Piece Piezas::gameState()
     {
         return X;
     }
-    else if(x_max > o_max)
+    else if(x_max < o_max)
     {
         return O;
     }
