@@ -130,7 +130,7 @@ TEST(PiezasTest, checkReset)
 	Piezas new_game;
 
 	new_game.dropPiece(0);
-	new_game.reset()
+	new_game.reset();
 
 	ASSERT_EQ(new_game.dropPiece(0), X);
 }
