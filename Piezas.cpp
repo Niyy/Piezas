@@ -215,7 +215,7 @@ Piece Piezas::gameState()
     {
         return X;
     }
-    else
+    else if(x_max > o_max)
     {
         return O;
     }
