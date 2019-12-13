@@ -140,7 +140,7 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    Piece current_piece;
+    Piece current_piece = pieceAt(0, 0);
     int vertical_count = 0;
     int horizontal_count = 0;
     int x_max = 0;
@@ -202,7 +202,7 @@ Piece Piezas::gameState()
                 }
                 else
                 {
-                    return Blank;
+                    return Invalid;
                 }
 
                 vertical_count = 0;
@@ -220,5 +220,5 @@ Piece Piezas::gameState()
         return O;
     }
 
-    return Invalid;
+    return Blank;
 }

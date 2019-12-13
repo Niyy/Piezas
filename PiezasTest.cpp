@@ -173,7 +173,7 @@ TEST(PiezasTest, checkGameUnfinished)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.gameState(), Blank);
+	ASSERT_EQ(new_game.gameState(), Invalid);
 }
 
 
@@ -191,7 +191,7 @@ TEST(PiezasTest, checkGameUnFinishedAndTie)
 		}
 	}
 
-	ASSERT_EQ(new_game.gameState(), Invalid);
+	ASSERT_EQ(new_game.gameState(), Blank);
 }
 
 
@@ -209,5 +209,5 @@ TEST(PiezasTest, checkGamefinishedTieGreatestOne)
 		}
 	}
 
-	ASSERT_EQ(new_game.gameState(), X);
+	ASSERT_EQ(new_game.gameState(), Blank);
 }
