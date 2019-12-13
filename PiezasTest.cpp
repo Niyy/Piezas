@@ -153,7 +153,7 @@ TEST(PiezasTest, checkdropPieceOutOfBoundsLower)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.dropPiece(-1), O);
+	ASSERT_EQ(new_game.dropPiece(-1), Invalid);
 }
 
 
@@ -163,7 +163,7 @@ TEST(PiezasTest, checkdropPieceOutOfBoundsUpper)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.dropPiece(7), O);
+	ASSERT_EQ(new_game.dropPiece(7), Invalid);
 }
 
 
