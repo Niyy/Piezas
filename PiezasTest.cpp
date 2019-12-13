@@ -121,3 +121,57 @@ TEST(PiezasTest, checkOutOfBoundsBoth)
 
 	ASSERT_EQ(new_game.pieceAt(-1, -1), Invalid);
 }
+
+
+
+
+TEST(PiezasTest, checkReset)
+{
+	Piezas new_game;
+
+	new_game.dropPiece(0);
+	new_game.reset()
+
+	ASSERT_EQ(new_game.dropPiece(0), X);
+}
+
+
+
+TEST(PiezasTest, checkSecondTurn)
+{
+	Piezas new_game;
+
+	new_game.dropPiece(0);
+
+	ASSERT_EQ(new_game.dropPiece(0), O);
+}
+
+
+
+
+TEST(PiezasTest, checkdropPieceOutOfBoundsLower)
+{
+	Piezas new_game;
+
+	ASSERT_EQ(new_game.dropPiece(-1), O);
+}
+
+
+
+
+TEST(PiezasTest, checkdropPieceOutOfBoundsLower)
+{
+	Piezas new_game;
+
+	ASSERT_EQ(new_game.dropPiece(7), O);
+}
+
+
+
+
+TEST(PiezasTest, checkGameUnfinished)
+{
+	Piezas new_game;
+
+	ASSERT_EQ(new_game.gameState(), Blank);
+}

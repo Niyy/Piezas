@@ -152,7 +152,11 @@ Piece Piezas::gameState()
         {
             if(pieceAt(y, x) == current_piece)
             {
-
+                if(x == 0)
+                {
+                    vertical_count++;
+                }
+                horizontal_count++;
             }
             else
             {
