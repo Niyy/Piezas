@@ -191,5 +191,23 @@ TEST(PiezasTest, checkGameUnFinishedAndTie)
 		}
 	}
 
-	ASSERT_EQ(new_game.gameState(), Blank);
+	ASSERT_EQ(new_game.gameState(), Invalid);
+}
+
+
+
+
+TEST(PiezasTest, checkGamefinishedTieGreatestOne)
+{
+	Piezas new_game;
+
+	for(int x = 0; x < 4; x++)
+	{
+		for(int y = 0; y < 3; y++)
+		{
+			new_game.dropPiece(x);
+		}
+	}
+
+	ASSERT_EQ(new_game.gameState(), Invalid);
 }
