@@ -159,7 +159,7 @@ TEST(PiezasTest, checkdropPieceOutOfBoundsLower)
 
 
 
-TEST(PiezasTest, checkdropPieceOutOfBoundsLower)
+TEST(PiezasTest, checkdropPieceOutOfBoundsUpper)
 {
 	Piezas new_game;
 
