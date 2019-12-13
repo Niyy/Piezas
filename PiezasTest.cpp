@@ -163,7 +163,7 @@ TEST(PiezasTest, checkdropPieceOutOfBoundsUpper)
 {
 	Piezas new_game;
 
-	ASSERT_EQ(new_game.dropPiece(7), Invalid);
+	ASSERT_EQ(new_game.dropPiece(7), Invalid );
 }
 
 
@@ -172,6 +172,24 @@ TEST(PiezasTest, checkdropPieceOutOfBoundsUpper)
 TEST(PiezasTest, checkGameUnfinished)
 {
 	Piezas new_game;
+
+	ASSERT_EQ(new_game.gameState(), Blank);
+}
+
+
+
+
+TEST(PiezasTest, checkGameUnFinishedAndTie)
+{
+	Piezas new_game;
+
+	for(int y = 0; y < 3; y++)
+	{
+		for(int x = 0; x < 4; x++)
+		{
+			new_game.dropPiece(x);
+		}
+	}
 
 	ASSERT_EQ(new_game.gameState(), Blank);
 }
