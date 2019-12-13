@@ -209,5 +209,5 @@ TEST(PiezasTest, checkGamefinishedTieGreatestOne)
 		}
 	}
 
-	ASSERT_EQ(new_game.gameState(), Invalid);
+	ASSERT_EQ(new_game.gameState(), X);
 }
