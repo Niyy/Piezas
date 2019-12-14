@@ -188,6 +188,7 @@ Piece Piezas::gameState()
             }
         }
 
+
         if(current_piece == X)
         {
             if(horizontal_count > x_max)
@@ -202,7 +203,7 @@ Piece Piezas::gameState()
                 o_max = horizontal_count;
             }
         }
-    }
+}
 
 
     for(unsigned x = 0; x < board.size(); x++)
@@ -228,7 +229,7 @@ Piece Piezas::gameState()
 
                         current_piece = O;
                     }
-                    else if(pieceAt(y, x) == O)
+                    else if(current_piece == O)
                     {
                         if(vertical_count > o_max)
                         {
@@ -246,6 +247,7 @@ Piece Piezas::gameState()
                 return Invalid;
             }
         }
+
 
         if(current_piece == X)
         {
