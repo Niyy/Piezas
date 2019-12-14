@@ -179,7 +179,7 @@ TEST(PiezasTest, checkGameUnfinished)
 
 
 
-TEST(PiezasTest, checkGameUnFinishedAndTie)
+TEST(PiezasTest, checkGameFinishedAndTie)
 {
 	Piezas new_game;
 
@@ -243,7 +243,7 @@ TEST(PiezasTest, checkGameFinishedXWin)
 
 
 
-TEST(PiezasTest, checkGameFinishedOWin)
+TEST(PiezasTest, checkGameFinishedXWinTwo)
 {
 	Piezas new_game;
 
@@ -265,7 +265,7 @@ TEST(PiezasTest, checkGameFinishedOWin)
 	new_game.dropPiece(0);
 	new_game.dropPiece(1);
 
-	ASSERT_EQ(new_game.gameState(), O);
+	ASSERT_EQ(new_game.gameState(), X);
 }
 
 
