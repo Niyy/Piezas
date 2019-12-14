@@ -237,12 +237,6 @@ TEST(PiezasTest, checkGameFinishedXWin)
 	new_game.dropPiece(2);
 	new_game.dropPiece(1);
 
-
-	for(int x = 0; x < 4)
-	{
-		new_game
-	}
-
 	ASSERT_EQ(new_game.gameState(), O);
 }
 
@@ -270,12 +264,6 @@ TEST(PiezasTest, checkGameFinishedOWin)
 
 	new_game.dropPiece(0);
 	new_game.dropPiece(1);
-
-
-	for(int x = 0; x < 4)
-	{
-		new_game
-	}
 
 	ASSERT_EQ(new_game.gameState(), X);
 }
