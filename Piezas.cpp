@@ -249,16 +249,16 @@ Piece Piezas::gameState()
 
         if(current_piece == X)
         {
-            if(horizontal_count > x_max)
+            if(vertical_count > x_max)
             {
-                x_max = horizontal_count;
+                x_max = vertical_count;
             }
         }
         else if(current_piece == O)
         {
-            if(horizontal_count > o_max)
+            if(vertical_count > o_max)
             {
-                o_max = horizontal_count;
+                o_max = vertical_count;
             }
         }
     }
