@@ -156,23 +156,26 @@ Piece Piezas::gameState()
             }
             else
             {
-                if(pieceAt(y, x) == X)
+                if(pieceAt(y,x) != Blank)
                 {
-                    if(horizontal_count > x_max)
+                    if(current_piece == X)
                     {
-                        x_max = horizontal_count;
-                    }
+                        if(horizontal_count > x_max)
+                        {
+                            x_max = horizontal_count;
+                        }
 
-                    current_piece = O;
-                }
-                else if(pieceAt(y, x) == O)
-                {
-                    if(horizontal_count > o_max)
+                        current_piece = O;
+                    }
+                    else if(current_piece == O)
                     {
-                        o_max = horizontal_count;
-                    }
+                        if(horizontal_count > o_max)
+                        {
+                            o_max = horizontal_count;
+                        }
 
-                    current_piece = X;
+                        current_piece = X;
+                    }
                 }
                 else
                 {
@@ -195,23 +198,26 @@ Piece Piezas::gameState()
             }
             else
             {
-                if(pieceAt(y, x) == X)
+                if(pieceAt(y, x) != Blank)
                 {
-                    if(vertical_count > x_max)
+                    if(current_piece == X)
                     {
-                        x_max = vertical_count;
-                    }
+                        if(vertical_count > x_max)
+                        {
+                            x_max = vertical_count;
+                        }
 
-                    current_piece = O;
-                }
-                else if(pieceAt(y, x) == O)
-                {
-                    if(vertical_count > o_max)
+                        current_piece = O;
+                    }
+                    else if(pieceAt(y, x) == O)
                     {
-                        o_max = vertical_count;
-                    }
+                        if(vertical_count > o_max)
+                        {
+                            o_max = vertical_count;
+                        }
 
-                    current_piece = X;
+                        current_piece = X;
+                    }
                 }
                 else
                 {
