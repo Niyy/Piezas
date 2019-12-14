@@ -215,7 +215,7 @@ TEST(PiezasTest, checkGamefinishedTieGreatestOne)
 
 
 
-TEST(PiezasTest, checkGameFinishedXWin)
+TEST(PiezasTest, checkGameFinishedOWin)
 {
 	Piezas new_game;
 
@@ -237,13 +237,13 @@ TEST(PiezasTest, checkGameFinishedXWin)
 	new_game.dropPiece(2);
 	new_game.dropPiece(1);
 
-	ASSERT_EQ(new_game.gameState(), X);
+	ASSERT_EQ(new_game.gameState(), O);
 }
 
 
 
 
-TEST(PiezasTest, checkGameFinishedXWinTwo)
+TEST(PiezasTest, checkGameFinishedXWin)
 {
 	Piezas new_game;
 
@@ -303,23 +303,23 @@ TEST(PiezasTest, checkGameFinishedOWinVert)
 {
 	Piezas new_game;
 
+	new_game.dropPiece(2);
 	new_game.dropPiece(1);
-	new_game.dropPiece(0);
 
-	new_game.dropPiece(2);
 	new_game.dropPiece(0);
-
-	new_game.dropPiece(2);
-	new_game.dropPiece(0);
-
-	new_game.dropPiece(3);
-	new_game.dropPiece(3);
+	new_game.dropPiece(1);
 
 	new_game.dropPiece(3);
 	new_game.dropPiece(2);
 
+	new_game.dropPiece(2);
 	new_game.dropPiece(1);
-	new_game.dropPiece(1);
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(0);
+
+	new_game.dropPiece(3);
+	new_game.dropPiece(3);
 
 	ASSERT_EQ(new_game.gameState(), O);
 }
