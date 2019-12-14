@@ -211,3 +211,71 @@ TEST(PiezasTest, checkGamefinishedTieGreatestOne)
 
 	ASSERT_EQ(new_game.gameState(), Blank);
 }
+
+
+
+
+TEST(PiezasTest, checkGameFinishedXWin)
+{
+	Piezas new_game;
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(0);
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(1);
+
+	new_game.dropPiece(2);
+	new_game.dropPiece(2);
+
+	new_game.dropPiece(3);
+	new_game.dropPiece(3);
+
+	new_game.dropPiece(3);
+	new_game.dropPiece(1);
+
+	new_game.dropPiece(2);
+	new_game.dropPiece(1);
+
+
+	for(int x = 0; x < 4)
+	{
+		new_game
+	}
+
+	ASSERT_EQ(new_game.gameState(), O);
+}
+
+
+
+
+TEST(PiezasTest, checkGameFinishedXWin)
+{
+	Piezas new_game;
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(1);
+
+	new_game.dropPiece(1);
+	new_game.dropPiece(2);
+
+	new_game.dropPiece(2);
+	new_game.dropPiece(3);
+
+	new_game.dropPiece(3);
+	new_game.dropPiece(3);
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(2);
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(1);
+
+
+	for(int x = 0; x < 4)
+	{
+		new_game
+	}
+
+	ASSERT_EQ(new_game.gameState(), X);
+}
