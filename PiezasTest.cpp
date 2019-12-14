@@ -315,11 +315,11 @@ TEST(PiezasTest, checkGameFinishedXWinVert)
 	new_game.dropPiece(3);
 	new_game.dropPiece(3);
 
-	new_game.dropPiece(2);
-	new_game.dropPiece(1);
-
 	new_game.dropPiece(1);
 	new_game.dropPiece(0);
+
+	new_game.dropPiece(2);
+	new_game.dropPiece(1);
 
 	ASSERT_EQ(new_game.gameState(), O);
 }
