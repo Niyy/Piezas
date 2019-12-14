@@ -203,7 +203,9 @@ Piece Piezas::gameState()
                 o_max = horizontal_count;
             }
         }
-}
+
+        horizontal_count = 0;
+    }
 
 
     for(unsigned x = 0; x < board.size(); x++)
@@ -263,6 +265,8 @@ Piece Piezas::gameState()
                 o_max = vertical_count;
             }
         }
+
+        vertical_count = 0;
     }
 
 
