@@ -299,7 +299,7 @@ TEST(PiezasTest, checkGameFinishedOWinVert)
 
 
 
-TEST(PiezasTest, checkGameFinishedXWinVert)
+TEST(PiezasTest, checkGameFinishedOWinVert)
 {
 	Piezas new_game;
 

@@ -192,6 +192,8 @@ Piece Piezas::gameState()
 
     for(unsigned x = 0; x < board.size(); x++)
     {
+        current_piece = pieceAt(0, x);
+
         for(unsigned y = 0; y < board.size(); y++)
         {
             if(pieceAt(y,x) != Blank)
