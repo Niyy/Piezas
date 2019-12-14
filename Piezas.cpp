@@ -150,13 +150,13 @@ Piece Piezas::gameState()
     {
         for(unsigned x = 0; x < board[y].size(); x++)
         {
-            if(pieceAt(y, x) == current_piece)
+            if(pieceAt(y,x) != Blank)
             {
-                horizontal_count++;
-            }
-            else
-            {
-                if(pieceAt(y,x) != Blank)
+                if(pieceAt(y, x) == current_piece)
+                {
+                    horizontal_count++;
+                }
+                else
                 {
                     if(current_piece == X)
                     {
@@ -176,13 +176,13 @@ Piece Piezas::gameState()
 
                         current_piece = X;
                     }
-                }
-                else
-                {
-                    return Invalid;
-                }
 
-                horizontal_count = 1;
+                    horizontal_count = 1;
+                }
+            }
+            else
+            {
+                return Invalid;
             }
         }
     }
@@ -192,13 +192,13 @@ Piece Piezas::gameState()
     {
         for(unsigned y = 0; y < board.size(); y++)
         {
-            if(pieceAt(y, x) == current_piece)
+            if(pieceAt(y,x) != Blank)
             {
-                vertical_count++;
-            }
-            else
-            {
-                if(pieceAt(y, x) != Blank)
+                if(pieceAt(y, x) == current_piece)
+                {
+                    vertical_count++;
+                }
+                else
                 {
                     if(current_piece == X)
                     {
@@ -218,13 +218,13 @@ Piece Piezas::gameState()
 
                         current_piece = X;
                     }
-                }
-                else
-                {
-                    return Invalid;
-                }
 
-                vertical_count = 1;
+                    vertical_count = 1;
+                }
+            }
+            else
+            {
+                return Invalid;
             }
         }
     }
