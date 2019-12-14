@@ -140,7 +140,7 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    Piece current_piece = pieceAt(0, 0);
+    Piece current_piece;
     int vertical_count = 0;
     int horizontal_count = 0;
     int x_max = 0;
@@ -148,6 +148,8 @@ Piece Piezas::gameState()
 
     for(unsigned y = 0; y < board.size(); y++)
     {
+        current_piece = pieceAt(y, 0);
+
         for(unsigned x = 0; x < board[y].size(); x++)
         {
             if(pieceAt(y,x) != Blank)
