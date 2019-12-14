@@ -267,3 +267,59 @@ TEST(PiezasTest, checkGameFinishedOWin)
 
 	ASSERT_EQ(new_game.gameState(), X);
 }
+
+
+
+
+TEST(PiezasTest, checkGameFinishedOWinVert)
+{
+	Piezas new_game;
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(1);
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(2);
+
+	new_game.dropPiece(0);
+	new_game.dropPiece(2);
+
+	new_game.dropPiece(3);
+	new_game.dropPiece(3);
+
+	new_game.dropPiece(2);
+	new_game.dropPiece(3);
+
+	new_game.dropPiece(1);
+	new_game.dropPiece(1);
+
+	ASSERT_EQ(new_game.gameState(), X);
+}
+
+
+
+
+TEST(PiezasTest, checkGameFinishedOWinVert)
+{
+	Piezas new_game;
+
+	new_game.dropPiece(1);
+	new_game.dropPiece(0);
+
+	new_game.dropPiece(2);
+	new_game.dropPiece(0);
+
+	new_game.dropPiece(2);
+	new_game.dropPiece(0);
+
+	new_game.dropPiece(3);
+	new_game.dropPiece(3);
+
+	new_game.dropPiece(3);
+	new_game.dropPiece(2);
+
+	new_game.dropPiece(1);
+	new_game.dropPiece(1);
+
+	ASSERT_EQ(new_game.gameState(), X);
+}
