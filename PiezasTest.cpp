@@ -237,7 +237,7 @@ TEST(PiezasTest, checkGameFinishedXWin)
 	new_game.dropPiece(2);
 	new_game.dropPiece(1);
 
-	ASSERT_EQ(new_game.gameState(), O);
+	ASSERT_EQ(new_game.gameState(), X);
 }
 
 
@@ -265,7 +265,7 @@ TEST(PiezasTest, checkGameFinishedOWin)
 	new_game.dropPiece(0);
 	new_game.dropPiece(1);
 
-	ASSERT_EQ(new_game.gameState(), X);
+	ASSERT_EQ(new_game.gameState(), O);
 }
 
 
